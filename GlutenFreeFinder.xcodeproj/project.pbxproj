@@ -1,0 +1,472 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 53;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9E1B54C929F9730F0066ECFC /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1B54C829F9730F0066ECFC /* HistoryTableViewCell.swift */; };
+		9E1B54CB29F9731E0066ECFC /* CheckListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1B54CA29F9731E0066ECFC /* CheckListTableViewCell.swift */; };
+		9E1B54CD29F973280066ECFC /* CheckListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1B54CC29F973280066ECFC /* CheckListView.swift */; };
+		9E1B54CF29F973470066ECFC /* CheckListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E1B54CE29F973470066ECFC /* CheckListView.xib */; };
+		9E1B54D429F973CA0066ECFC /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1B54D029F973C90066ECFC /* PopUpViewController.swift */; };
+		9E1B54D529F973CA0066ECFC /* CheckListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1B54D129F973C90066ECFC /* CheckListTableViewController.swift */; };
+		9E1B54D629F973CA0066ECFC /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1B54D229F973C90066ECFC /* CustomTabBarController.swift */; };
+		9E1B54D729F973CA0066ECFC /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1B54D329F973CA0066ECFC /* HistoryTableViewController.swift */; };
+		9E1B54DC29F97D290066ECFC /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 9E1B54DB29F97D290066ECFC /* FirebaseAnalytics */; };
+		9E1B54DE29F97D290066ECFC /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 9E1B54DD29F97D290066ECFC /* FirebaseAuth */; };
+		9E1B54E029F97D290066ECFC /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 9E1B54DF29F97D290066ECFC /* FirebaseDatabase */; };
+		9E1B54E229F9AD870066ECFC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9E1B54E129F9AD870066ECFC /* GoogleService-Info.plist */; };
+		9E7D58B725A784F2005418FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7D58B625A784F2005418FE /* AppDelegate.swift */; };
+		9E7D58B925A784F2005418FE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7D58B825A784F2005418FE /* SceneDelegate.swift */; };
+		9E7D58BB25A784F2005418FE /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7D58BA25A784F2005418FE /* ScannerViewController.swift */; };
+		9E7D58BE25A784F2005418FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E7D58BC25A784F2005418FE /* Main.storyboard */; };
+		9E7D58C325A784F3005418FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E7D58C225A784F3005418FE /* Assets.xcassets */; };
+		9E7D58C625A784F3005418FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E7D58C425A784F3005418FE /* LaunchScreen.storyboard */; };
+		9ED33BEE25B3376A00AEDF03 /* Grocery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED33BED25B3376A00AEDF03 /* Grocery.swift */; };
+		9ED33BF125B3391600AEDF03 /* Nutrition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED33BF025B3391600AEDF03 /* Nutrition.swift */; };
+		9ED33BF425B3ACD100AEDF03 /* glutenFreeJsonExample.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9ED33BF325B3ACD100AEDF03 /* glutenFreeJsonExample.txt */; };
+		9ED33BF725B3B73800AEDF03 /* GroceryDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED33BF625B3B73800AEDF03 /* GroceryDetailsViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9E1B54C829F9730F0066ECFC /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
+		9E1B54CA29F9731E0066ECFC /* CheckListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckListTableViewCell.swift; sourceTree = "<group>"; };
+		9E1B54CC29F973280066ECFC /* CheckListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckListView.swift; sourceTree = "<group>"; };
+		9E1B54CE29F973470066ECFC /* CheckListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CheckListView.xib; sourceTree = "<group>"; };
+		9E1B54D029F973C90066ECFC /* PopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
+		9E1B54D129F973C90066ECFC /* CheckListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckListTableViewController.swift; sourceTree = "<group>"; };
+		9E1B54D229F973C90066ECFC /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		9E1B54D329F973CA0066ECFC /* HistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
+		9E1B54E129F9AD870066ECFC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9E1B54E329F9BF140066ECFC /* GFFConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = GFFConfig.xcconfig; sourceTree = "<group>"; };
+		9E7D58B325A784F2005418FE /* GlutenFreeFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GlutenFreeFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E7D58B625A784F2005418FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9E7D58B825A784F2005418FE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		9E7D58BA25A784F2005418FE /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
+		9E7D58BD25A784F2005418FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9E7D58C225A784F3005418FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9E7D58C525A784F3005418FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9E7D58C725A784F3005418FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9ED33BED25B3376A00AEDF03 /* Grocery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grocery.swift; sourceTree = "<group>"; };
+		9ED33BF025B3391600AEDF03 /* Nutrition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nutrition.swift; sourceTree = "<group>"; };
+		9ED33BF325B3ACD100AEDF03 /* glutenFreeJsonExample.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = glutenFreeJsonExample.txt; sourceTree = "<group>"; };
+		9ED33BF625B3B73800AEDF03 /* GroceryDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryDetailsViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9E7D58B025A784F2005418FE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E1B54E029F97D290066ECFC /* FirebaseDatabase in Frameworks */,
+				9E1B54DC29F97D290066ECFC /* FirebaseAnalytics in Frameworks */,
+				9E1B54DE29F97D290066ECFC /* FirebaseAuth in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9E1B54C329F828F20066ECFC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9ED33BED25B3376A00AEDF03 /* Grocery.swift */,
+				9ED33BF025B3391600AEDF03 /* Nutrition.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9E1B54C429F8290E0066ECFC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9E7D58BA25A784F2005418FE /* ScannerViewController.swift */,
+				9E1B54D229F973C90066ECFC /* CustomTabBarController.swift */,
+				9ED33BF625B3B73800AEDF03 /* GroceryDetailsViewController.swift */,
+				9E1B54D129F973C90066ECFC /* CheckListTableViewController.swift */,
+				9E1B54D329F973CA0066ECFC /* HistoryTableViewController.swift */,
+				9E1B54D029F973C90066ECFC /* PopUpViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		9E1B54C529F8293E0066ECFC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9E1B54CC29F973280066ECFC /* CheckListView.swift */,
+				9E1B54CA29F9731E0066ECFC /* CheckListTableViewCell.swift */,
+				9E1B54C829F9730F0066ECFC /* HistoryTableViewCell.swift */,
+				9E7D58BC25A784F2005418FE /* Main.storyboard */,
+				9E7D58C425A784F3005418FE /* LaunchScreen.storyboard */,
+				9E1B54CE29F973470066ECFC /* CheckListView.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9E7D58AA25A784F2005418FE = {
+			isa = PBXGroup;
+			children = (
+				9E7D58B525A784F2005418FE /* GlutenFreeFinder */,
+				9E7D58B425A784F2005418FE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9E7D58B425A784F2005418FE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9E7D58B325A784F2005418FE /* GlutenFreeFinder.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9E7D58B525A784F2005418FE /* GlutenFreeFinder */ = {
+			isa = PBXGroup;
+			children = (
+				9E7D58B625A784F2005418FE /* AppDelegate.swift */,
+				9E7D58B825A784F2005418FE /* SceneDelegate.swift */,
+				9E1B54C329F828F20066ECFC /* Models */,
+				9E1B54C529F8293E0066ECFC /* Views */,
+				9E1B54C429F8290E0066ECFC /* Controllers */,
+				9ED33BF325B3ACD100AEDF03 /* glutenFreeJsonExample.txt */,
+				9E7D58C225A784F3005418FE /* Assets.xcassets */,
+				9E7D58C725A784F3005418FE /* Info.plist */,
+				9E1B54E129F9AD870066ECFC /* GoogleService-Info.plist */,
+				9E1B54E329F9BF140066ECFC /* GFFConfig.xcconfig */,
+			);
+			path = GlutenFreeFinder;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9E7D58B225A784F2005418FE /* GlutenFreeFinder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9E7D58CA25A784F3005418FE /* Build configuration list for PBXNativeTarget "GlutenFreeFinder" */;
+			buildPhases = (
+				9E7D58AF25A784F2005418FE /* Sources */,
+				9E7D58B025A784F2005418FE /* Frameworks */,
+				9E7D58B125A784F2005418FE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GlutenFreeFinder;
+			packageProductDependencies = (
+				9E1B54DB29F97D290066ECFC /* FirebaseAnalytics */,
+				9E1B54DD29F97D290066ECFC /* FirebaseAuth */,
+				9E1B54DF29F97D290066ECFC /* FirebaseDatabase */,
+			);
+			productName = GlutenFreeFinder;
+			productReference = 9E7D58B325A784F2005418FE /* GlutenFreeFinder.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9E7D58AB25A784F2005418FE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastSwiftUpdateCheck = 1230;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					9E7D58B225A784F2005418FE = {
+						CreatedOnToolsVersion = 12.3;
+					};
+				};
+			};
+			buildConfigurationList = 9E7D58AE25A784F2005418FE /* Build configuration list for PBXProject "GlutenFreeFinder" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9E7D58AA25A784F2005418FE;
+			packageReferences = (
+				9E1B54DA29F97D290066ECFC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
+			productRefGroup = 9E7D58B425A784F2005418FE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9E7D58B225A784F2005418FE /* GlutenFreeFinder */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9E7D58B125A784F2005418FE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E7D58C625A784F3005418FE /* LaunchScreen.storyboard in Resources */,
+				9E1B54E229F9AD870066ECFC /* GoogleService-Info.plist in Resources */,
+				9E7D58C325A784F3005418FE /* Assets.xcassets in Resources */,
+				9ED33BF425B3ACD100AEDF03 /* glutenFreeJsonExample.txt in Resources */,
+				9E1B54CF29F973470066ECFC /* CheckListView.xib in Resources */,
+				9E7D58BE25A784F2005418FE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9E7D58AF25A784F2005418FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E1B54D529F973CA0066ECFC /* CheckListTableViewController.swift in Sources */,
+				9E7D58BB25A784F2005418FE /* ScannerViewController.swift in Sources */,
+				9E1B54D629F973CA0066ECFC /* CustomTabBarController.swift in Sources */,
+				9ED33BF725B3B73800AEDF03 /* GroceryDetailsViewController.swift in Sources */,
+				9E1B54C929F9730F0066ECFC /* HistoryTableViewCell.swift in Sources */,
+				9E7D58B725A784F2005418FE /* AppDelegate.swift in Sources */,
+				9E1B54CB29F9731E0066ECFC /* CheckListTableViewCell.swift in Sources */,
+				9E1B54D429F973CA0066ECFC /* PopUpViewController.swift in Sources */,
+				9E1B54CD29F973280066ECFC /* CheckListView.swift in Sources */,
+				9ED33BF125B3391600AEDF03 /* Nutrition.swift in Sources */,
+				9E7D58B925A784F2005418FE /* SceneDelegate.swift in Sources */,
+				9ED33BEE25B3376A00AEDF03 /* Grocery.swift in Sources */,
+				9E1B54D729F973CA0066ECFC /* HistoryTableViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9E7D58BC25A784F2005418FE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9E7D58BD25A784F2005418FE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9E7D58C425A784F3005418FE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9E7D58C525A784F3005418FE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9E7D58C825A784F3005418FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9E7D58C925A784F3005418FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9E7D58CB25A784F3005418FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E1B54E329F9BF140066ECFC /* GFFConfig.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = 5P8JPPPQ9D;
+				INFOPLIST_FILE = GlutenFreeFinder/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.TripleMonkeyStudio.GlutenFreeFinder;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9E7D58CC25A784F3005418FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E1B54E329F9BF140066ECFC /* GFFConfig.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = 5P8JPPPQ9D;
+				INFOPLIST_FILE = GlutenFreeFinder/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.TripleMonkeyStudio.GlutenFreeFinder;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9E7D58AE25A784F2005418FE /* Build configuration list for PBXProject "GlutenFreeFinder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9E7D58C825A784F3005418FE /* Debug */,
+				9E7D58C925A784F3005418FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9E7D58CA25A784F3005418FE /* Build configuration list for PBXNativeTarget "GlutenFreeFinder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9E7D58CB25A784F3005418FE /* Debug */,
+				9E7D58CC25A784F3005418FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9E1B54DA29F97D290066ECFC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9E1B54DB29F97D290066ECFC /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9E1B54DA29F97D290066ECFC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		9E1B54DD29F97D290066ECFC /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9E1B54DA29F97D290066ECFC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		9E1B54DF29F97D290066ECFC /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9E1B54DA29F97D290066ECFC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 9E7D58AB25A784F2005418FE /* Project object */;
+}

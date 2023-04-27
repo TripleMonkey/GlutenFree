@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CheckListView" customModule="GlutenFreeFinder" customModuleProvider="target">
+            <connections>
+                <outlet property="cellAccessory" destination="cX7-RG-x2L" id="6hP-DO-qUT"/>
+                <outlet property="checkListView" destination="iN0-l3-epB" id="x9V-Au-GZ8"/>
+                <outlet property="glutenIndicator" destination="LYh-Sq-JFW" id="UAs-TZ-n2L"/>
+                <outlet property="groceryImage" destination="Obm-xC-j4W" id="CdX-cj-pgM"/>
+                <outlet property="groceryTitle" destination="ERr-al-k5l" id="AjN-uZ-Wo0"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleAspectFit" id="iN0-l3-epB" customClass="CheckListTableViewCell" customModule="GlutenFreeFinder" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tableViewBackground" translatesAutoresizingMaskIntoConstraints="NO" id="8To-dm-not">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+                </imageView>
+                <stackView opaque="NO" contentMode="scaleAspectFit" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="pEn-Zb-RzR" userLabel="GroceryDetailsStackView">
+                    <rect key="frame" x="30" y="20" width="352" height="75"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="Obm-xC-j4W">
+                            <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="75" id="TaF-b4-wAZ"/>
+                                <constraint firstAttribute="width" constant="75" id="llU-if-SJh"/>
+                            </constraints>
+                        </imageView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="57X-sl-Fq5">
+                            <rect key="frame" x="95" y="16" width="193" height="43.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grocery Title" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="ERr-al-k5l">
+                                    <rect key="frame" x="0.0" y="0.0" width="193" height="24"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                    <color key="textColor" name="maroonTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gluten-Free" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.125" translatesAutoresizingMaskIntoConstraints="NO" id="LYh-Sq-JFW">
+                                    <rect key="frame" x="0.0" y="24" width="193" height="19.5"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                    <color key="textColor" name="glutenFreeGreen"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cX7-RG-x2L">
+                            <rect key="frame" x="308" y="15.5" width="44" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="44" id="Hdh-3K-oOx"/>
+                                <constraint firstAttribute="height" constant="44" id="cgT-Ls-Nhe"/>
+                            </constraints>
+                        </button>
+                    </subviews>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Hoc-xq-S6e" userLabel="PassStackView">
+                    <rect key="frame" x="52" y="114" width="103.5" height="176"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="8DK-zb-xmc">
+                            <rect key="frame" x="0.0" y="0.0" width="103.5" height="44"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pass" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.125" translatesAutoresizingMaskIntoConstraints="NO" id="Vm6-QR-FQt">
+                                    <rect key="frame" x="0.0" y="0.0" width="52.5" height="44"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                    <color key="textColor" name="glutenFreeGreen"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0F8-Ia-Rvc" userLabel="PassButton">
+                                    <rect key="frame" x="59.5" y="0.0" width="44" height="44"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="44" id="OuU-1p-JCR"/>
+                                        <constraint firstAttribute="width" constant="44" id="fKB-QN-hbl"/>
+                                    </constraints>
+                                    <state key="normal" image="deselectedCheck"/>
+                                    <state key="selected" image="selectedCheck"/>
+                                    <connections>
+                                        <action selector="buttonTap:" destination="-1" eventType="touchUpInside" id="8K4-zf-AY1"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="PMf-Vg-Cpb">
+                            <rect key="frame" x="0.0" y="44" width="103.5" height="44"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Taste" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.125" translatesAutoresizingMaskIntoConstraints="NO" id="zQk-Tk-crf">
+                                    <rect key="frame" x="0.0" y="0.0" width="52.5" height="44"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                    <color key="textColor" name="maroonTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sfw-Ls-qDR" userLabel="TasteButton">
+                                    <rect key="frame" x="59.5" y="0.0" width="44" height="44"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="44" id="7ZC-sV-dDA"/>
+                                        <constraint firstAttribute="height" constant="44" id="FDU-gc-wsB"/>
+                                    </constraints>
+                                    <state key="normal" image="deselectedCheck"/>
+                                    <state key="selected" image="selectedCheck"/>
+                                    <connections>
+                                        <action selector="buttonTap:" destination="-1" eventType="touchUpInside" id="jEA-ou-WIo"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="Cav-E0-B2p">
+                            <rect key="frame" x="0.0" y="88" width="103.5" height="44"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Texture" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.125" translatesAutoresizingMaskIntoConstraints="NO" id="Z7h-ex-bC5">
+                                    <rect key="frame" x="0.0" y="0.0" width="52.5" height="44"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                    <color key="textColor" name="maroonTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gUC-xF-2le" userLabel="TextureButton">
+                                    <rect key="frame" x="59.5" y="0.0" width="44" height="44"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="44" id="SqH-Rf-6Zl"/>
+                                        <constraint firstAttribute="height" constant="44" id="pL3-mt-VHX"/>
+                                    </constraints>
+                                    <state key="normal" image="deselectedCheck"/>
+                                    <state key="selected" image="selectedCheck"/>
+                                    <connections>
+                                        <action selector="buttonTap:" destination="-1" eventType="touchUpInside" id="yST-C1-4BQ"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="4aD-0k-dI3">
+                            <rect key="frame" x="0.0" y="132" width="103.5" height="44"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.125" translatesAutoresizingMaskIntoConstraints="NO" id="611-Ak-vM3">
+                                    <rect key="frame" x="0.0" y="0.0" width="52.5" height="44"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                    <color key="textColor" name="maroonTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xhK-rj-K2C" userLabel="PriceButton">
+                                    <rect key="frame" x="59.5" y="0.0" width="44" height="44"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="44" id="7dZ-ya-760"/>
+                                        <constraint firstAttribute="width" constant="44" id="iLk-ze-fuf"/>
+                                    </constraints>
+                                    <state key="normal" image="deselectedCheck"/>
+                                    <state key="selected" image="selectedCheck"/>
+                                    <connections>
+                                        <action selector="buttonTap:" destination="-1" eventType="touchUpInside" id="3iW-sG-Vjn"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="Cax-IA-FfO" userLabel="FailStackView">
+                    <rect key="frame" x="186" y="114" width="145.5" height="176"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="iAp-Pb-eIg">
+                            <rect key="frame" x="65" y="0.0" width="80.5" height="44"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.125" translatesAutoresizingMaskIntoConstraints="NO" id="9Qn-5L-SWN">
+                                    <rect key="frame" x="0.0" y="0.0" width="28.5" height="44"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                    <color key="textColor" name="warningRed"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eO9-D1-5cM" userLabel="FailButton">
+                                    <rect key="frame" x="36.5" y="0.0" width="44" height="44"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="44" id="3P4-nA-pQs"/>
+                                        <constraint firstAttribute="height" constant="44" id="HvS-Tx-rsa"/>
+                                    </constraints>
+                                    <state key="normal" image="deselectedX"/>
+                                    <state key="selected" image="selectedX"/>
+                                    <connections>
+                                        <action selector="buttonTap:" destination="-1" eventType="touchUpInside" id="gxj-7X-gel"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="fBd-uJ-PUo">
+                            <rect key="frame" x="0.0" y="44" width="145.5" height="44"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GI Symptoms" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.125" translatesAutoresizingMaskIntoConstraints="NO" id="ARH-Ax-UCK">
+                                    <rect key="frame" x="0.0" y="0.0" width="94.5" height="44"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                    <color key="textColor" name="maroonTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SUe-2P-hzO" userLabel="GISymptomsButton">
+                                    <rect key="frame" x="101.5" y="0.0" width="44" height="44"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="44" id="OJm-0S-put"/>
+                                        <constraint firstAttribute="height" constant="44" id="cBN-AH-NGn"/>
+                                    </constraints>
+                                    <state key="normal" image="deselectedX"/>
+                                    <state key="selected" image="selectedX"/>
+                                    <connections>
+                                        <action selector="buttonTap:" destination="-1" eventType="touchUpInside" id="gPf-Sc-kwh"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ICr-X9-hwC">
+                            <rect key="frame" x="40.5" y="88" width="105" height="44"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nausea" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.125" translatesAutoresizingMaskIntoConstraints="NO" id="O3k-bu-SWe">
+                                    <rect key="frame" x="0.0" y="0.0" width="53" height="44"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                    <color key="textColor" name="maroonTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O6S-9N-soE" userLabel="NauseaButton">
+                                    <rect key="frame" x="61" y="0.0" width="44" height="44"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="44" id="16g-bG-xe1"/>
+                                        <constraint firstAttribute="height" constant="44" id="8uO-yN-k53"/>
+                                    </constraints>
+                                    <state key="normal" image="deselectedX"/>
+                                    <state key="selected" image="selectedX"/>
+                                    <connections>
+                                        <action selector="buttonTap:" destination="-1" eventType="touchUpInside" id="Asb-yB-XGx"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Vix-Cy-EMa">
+                            <rect key="frame" x="63.5" y="132" width="82" height="44"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pain" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.125" translatesAutoresizingMaskIntoConstraints="NO" id="Bod-pb-bY0">
+                                    <rect key="frame" x="0.0" y="0.0" width="30" height="44"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                    <color key="textColor" name="maroonTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mfP-BP-SB2" userLabel="PainButton">
+                                    <rect key="frame" x="38" y="0.0" width="44" height="44"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="44" id="T0g-zP-LLV"/>
+                                        <constraint firstAttribute="height" constant="44" id="iDx-ac-kYw"/>
+                                    </constraints>
+                                    <state key="normal" image="deselectedX"/>
+                                    <state key="selected" image="selectedX"/>
+                                    <connections>
+                                        <action selector="buttonTap:" destination="-1" eventType="touchUpInside" id="hFI-hT-Wx6"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <constraints>
+                <constraint firstItem="Hoc-xq-S6e" firstAttribute="centerX" secondItem="8To-dm-not" secondAttribute="centerX" multiplier="0.5" id="A3v-Kz-RPo"/>
+                <constraint firstItem="Cax-IA-FfO" firstAttribute="centerX" secondItem="8To-dm-not" secondAttribute="centerX" multiplier="1.25" id="BFa-cD-jos"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Cax-IA-FfO" secondAttribute="bottom" constant="10" id="JkQ-Of-edc"/>
+                <constraint firstItem="8To-dm-not" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="PoA-Rv-7he"/>
+                <constraint firstItem="8To-dm-not" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="VMG-ln-dwI"/>
+                <constraint firstItem="8To-dm-not" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="cyR-fo-kMf"/>
+                <constraint firstItem="pEn-Zb-RzR" firstAttribute="top" secondItem="8To-dm-not" secondAttribute="top" constant="20" id="dBE-nF-ZZn"/>
+                <constraint firstItem="pEn-Zb-RzR" firstAttribute="width" secondItem="8To-dm-not" secondAttribute="width" multiplier="0.85" id="oHo-rT-JgB"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Hoc-xq-S6e" secondAttribute="bottom" constant="10" id="rXt-UF-Bwp"/>
+                <constraint firstItem="8To-dm-not" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="t3g-pF-HFT"/>
+                <constraint firstItem="pEn-Zb-RzR" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="vHA-oC-a7V"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="137.68115942028987" y="132.58928571428572"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="defaultImage" width="65.5" height="65.5"/>
+        <image name="deselectedCheck" width="65.5" height="65.5"/>
+        <image name="deselectedX" width="65" height="65.5"/>
+        <image name="selectedCheck" width="65.5" height="65.5"/>
+        <image name="selectedX" width="65" height="65.5"/>
+        <image name="tableViewBackground" width="600.5" height="65.5"/>
+        <namedColor name="glutenFreeGreen">
+            <color red="0.16470588235294117" green="0.69803921568627447" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="maroonTextColor">
+            <color red="0.34901960784313724" green="0.16078431372549021" blue="0.25490196078431371" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="warningRed">
+            <color red="0.92156862745098034" green="0.066666666666666666" blue="0.098039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
