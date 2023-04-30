@@ -61,7 +61,9 @@ class HistoryTableViewController: UITableViewController {
         }
         
         // Display grocery image
-        cell.imageView?.image = grocery.loadImage()
+        Task {
+            cell.imageView?.image = await grocery.loadImage()
+        }
         cell.imageView?.bounds = CGRect(x: 0, y: 0, width: cell.frame.height * 0.5, height: cell.frame.height * 0.5)
         cell.imageView?.clipsToBounds = true
         return cell

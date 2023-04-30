@@ -28,6 +28,9 @@ class GroceryDetailsViewController: UIViewController {
             if currentGrocery.badges.contains("grain_free") {
                 glutenIndicatorLabel.text = "Gluten-Free"
                 glutenIndicatorLabel.textColor = UIColor(named: "glutenFreeGreen")
+                Task {
+                    groceryImage.image = await currentGrocery.loadImage()
+                }
             }
             else {
                 glutenIndicatorLabel.text = "Contains Gluten"

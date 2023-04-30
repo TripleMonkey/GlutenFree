@@ -27,7 +27,9 @@ class CheckListView: UIView {
     var grocery: Grocery! {
         // Using didSet will update grocery for xib each time new cell is loaded in tableview
         didSet {
-            groceryImage.image = grocery.loadImage()
+            Task {
+                groceryImage.image = await grocery.loadImage()
+            }
             groceryTitle.text = grocery.title
             if grocery.badges.contains("gluten_free") {
                 self.glutenIndicator.textColor = UIColor(named: "glutenFreeGreen")

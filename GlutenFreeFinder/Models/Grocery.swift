@@ -40,7 +40,7 @@ class Grocery: Codable {
    
    
    // Function to convert url to image
-   func loadImage() -> UIImage {
+   func loadImage() async -> UIImage {
               
        var groceryImage: UIImage!
        // Use do-catch to download image
