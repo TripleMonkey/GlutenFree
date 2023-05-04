@@ -47,7 +47,6 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Cast viewController's inheritted tabBarController as CustomTabBarController
         tabBar = self.tabBarController as? CustomTabBarController
         //searchHistory = tabBar.searchHistory
@@ -78,7 +77,7 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
         // Create discovery session to access rear camera for capturing video
         let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInDualCamera, .builtInWideAngleCamera], mediaType: AVMediaType.video, position: .back)
         
-        // Asign device from discovery sesion
+        // Asign device from discovery session
         guard let captureDevice = deviceDiscoverySession.devices.first
         else { print("Failed to access camera"); return }
         
@@ -110,6 +109,7 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
         }
         catch {
             // Print any error and end
+            //ADD: Add alert
             print(error)
             return
         }
@@ -124,50 +124,34 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
         if codeList.contains(metadataObj.type) {
             guard let upcString = metadataObj.stringValue
             else { return }
-            var trimmedUPC = upcString
-            trimmedUPC.removeFirst()
             // Stop session if code detected
             captureSession.stopRunning()
-            // variable to track if match found in existing history
-            var matched = false
-            
-            for i in 0..<searchHistory.count {
-                if searchHistory[i]?.upc == trimmedUPC {
-                    // Match found in history, use that grocery
-                    currentGrocery = searchHistory[i]
-                    matched = true
+            Task {
+                await retrieveGrocery(jsonAt: upcString)
+                // If parse successful or if grocery exists in search history perform segue to details view
+                if currentGrocery != nil {
+                    self.performSegue(withIdentifier: "groceryDetails", sender: self)
+                    // Add to history
+                    tabBar?.updateHistory(with: currentGrocery!)
+                    // Clear currentGrocery
+                    currentGrocery = nil
+                    // Reset capture session
+                    
+                }
+                else {
+                    // Present alert to notify grocery not found in database
+                    // Create alert
+                    let notFoundAlert = UIAlertController(title: "Grocery not found", message: "Try again", preferredStyle: UIAlertController.Style.alert)
+                    // Create OK button
+                    let okButton = UIAlertAction(title: "OK", style: .cancel) {_ in
+                        self.runScan()
+                    }
+                    // Add button to alert
+                    notFoundAlert.addAction(okButton)
+                    // Show alert
+                    self.present(notFoundAlert, animated: true, completion: nil)
                 }
             }
-            // If no match or history is empty call to api
-            if matched == false || searchHistory.isEmpty {
-                
-                // Call to Spoonacular API
-                Task {
-                    await retrieveGrocery(jsonAt: trimmedUPC)
-                }
-            }
-            // If parse successful or if grocery exists in search history perform segue to details view
-            if currentGrocery != nil {
-                self.performSegue(withIdentifier: "groceryDetails", sender: self)
-                // Add to history
-                tabBar?.updateHistory(with: currentGrocery!)
-                // Clear currentGrocery
-                currentGrocery = nil
-            }
-            else {
-                // Present alert to notify grocery not found in database
-                // Create alert
-                let notFoundAlert = UIAlertController(title: "Grocery not found", message: "Try again", preferredStyle: UIAlertController.Style.alert)
-                // Create OK button
-                let okButton = UIAlertAction(title: "OK", style: .cancel) {_ in
-                    self.runScan()
-                }
-                // Add button to alert
-                notFoundAlert.addAction(okButton)
-                // Show alert
-                self.present(notFoundAlert, animated: true, completion: nil)
-            }
-            
         }
     }
     
@@ -194,34 +178,47 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     
     // Function to update api key as needed for api call
     func retrieveGrocery(jsonAt upcString: String) async {
+        // Trim UPC for Spoonacular API
+        var trimmedUPC = upcString
         
-        // Session for async task
-        let session = URLSession.shared
-
-        if let apiKey = Bundle.main.infoDictionary? ["SPOONACULAR_API_KEY"] as? String {
-            
-            guard let upcApiCall = URL(string: "https://api.spoonacular.com/food/products/upc/\(upcString)?apiKey=\(apiKey)")
-            else { print(apiKey)
-                return }
-            
-            // Create data from api call
-            do {
-                let (data, _) = try await session.data(from: upcApiCall)
-                // Parse data from api call
-                parseUpc(json: data)
-                // DEBUG
-                print(apiKey)
-                // Exit loop if successful
-                return
+        // variable to track if match found in existing history
+        var matched = false
+        
+        trimmedUPC.removeFirst()
+        for i in 0..<searchHistory.count {
+            if searchHistory[i]?.upc == trimmedUPC {
+                // Match found in history, use that grocery
+                currentGrocery = searchHistory[i]
+                matched = true
             }
-            catch {
-                // Else add one to key index before trying agian
-                //keyIndex += 1
-                // Or reset to zero if key count exceeded
-                //                if keyIndex == apiKeys.count {
-                //                    keyIndex = 0
-                //                }
-                print(error)
+        }
+        // If no match or history is empty call to api
+        if matched == false || searchHistory.isEmpty {
+            
+            // Session for async task
+            let session = URLSession.shared
+            // Get API Key from bundle
+            if let apiKey = Bundle.main.infoDictionary? ["SPOONACULAR_API_KEY"] as? String {
+                // Call to Spoonacular API
+                guard let upcApiCall = URL(string: "https://api.spoonacular.com/food/products/upc/\(trimmedUPC)?apiKey=\(apiKey)")
+                else {
+                    print(apiKey)
+                    return
+                }
+                
+                // Create data from api call
+                do {
+                    let (data, _) = try await session.data(from: upcApiCall)
+                    // Parse data from api call
+                    parseUpc(json: data)
+                    // DEBUG
+                    print(apiKey)
+                    // Exit loop if successful
+                    return
+                }
+                catch {
+                    print(error)
+                }
             }
         }
     }
