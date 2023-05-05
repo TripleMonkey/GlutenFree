@@ -32,8 +32,6 @@
             else { return }
             self.searchHistory.append(groceryToLoad)
         })
-        
-
     }
     
     
@@ -62,7 +60,7 @@
     
     func addToFirebase(_ grocery: Grocery) {
         
-        let groceryToAdd = ["title": grocery.title!, "checked": grocery.checked, "image": grocery.image!] as [String : Any]
+        let groceryToAdd = ["title": grocery.title, "checked": grocery.checked, "image": grocery.image] as [String : Any]
         
         let groceryRef = self.ref.child("\(grocery.title.lowercased())")
         let badges = groceryRef.child("badges")

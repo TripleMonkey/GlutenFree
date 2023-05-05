@@ -37,8 +37,6 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
         AVMetadataObject.ObjectType.pdf417,
         AVMetadataObject.ObjectType.upce
     ]
-    // Index to track current api key in use
-    var keyIndex = 0
     // Custom tab controller to maintain search history
     var tabBar: CustomTabBarController!
     var searchHistory = [Grocery?]()
@@ -62,7 +60,7 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     // Start scanner when returning to scan view
     override func viewWillAppear(_ animated: Bool) {
         runScan()
-        //        searchHistory = tabBar.searchHistory
+        //searchHistory = tabBar.searchHistory
     }
     
     // Stop scan when view covered
@@ -127,7 +125,7 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
             // Stop session if code detected
             captureSession.stopRunning()
             Task {
-                await retrieveGrocery(jsonAt: upcString)
+                await updateGrocery(from: upcString)
                 // If parse successful or if grocery exists in search history perform segue to details view
                 if currentGrocery != nil {
                     self.performSegue(withIdentifier: "groceryDetails", sender: self)
@@ -164,27 +162,14 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
         }
     }
     
-    // MARK: Parse function
-    
-    func parseUpc(json: Data) {
-        // Create JSON Decoder
-        let decoder = JSONDecoder()
-        
-        // Decode data and update currentGrocery with results
-        if let scannedGrocery = try? decoder.decode(ScannedGrocery.self, from: json) {
-            currentGrocery = Grocery(title: scannedGrocery.title, badges: scannedGrocery.badges, nutrition: scannedGrocery.nutrition, upc: scannedGrocery.upc, images: scannedGrocery.images)
-        }
-    }
-    
-    // Function to update api key as needed for api call
-    func retrieveGrocery(jsonAt upcString: String) async {
+    // MARK: Update grocery
+    func updateGrocery(from upcString: String) async {
         // Trim UPC for Spoonacular API
         var trimmedUPC = upcString
-        
+        trimmedUPC.removeFirst()
         // variable to track if match found in existing history
         var matched = false
         
-        trimmedUPC.removeFirst()
         for i in 0..<searchHistory.count {
             if searchHistory[i]?.upc == trimmedUPC {
                 // Match found in history, use that grocery
@@ -194,7 +179,6 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
         }
         // If no match or history is empty call to api
         if matched == false || searchHistory.isEmpty {
-            
             // Session for async task
             let session = URLSession.shared
             // Get API Key from bundle
@@ -205,12 +189,15 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
                     print(apiKey)
                     return
                 }
-                
                 // Create data from api call
                 do {
                     let (data, _) = try await session.data(from: upcApiCall)
-                    // Parse data from api call
-                    parseUpc(json: data)
+                    // Create grocery from api data
+                    currentGrocery = Grocery(apiData: data)
+                    // Add groceery to search history
+                    if currentGrocery?.upc != "0" {
+                        searchHistory.append(currentGrocery)
+                    }
                     // DEBUG
                     print(apiKey)
                     // Exit loop if successful
