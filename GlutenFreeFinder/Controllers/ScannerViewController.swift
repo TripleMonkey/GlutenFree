@@ -8,13 +8,12 @@
 import UIKit
 import AVFoundation
 
+
 class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
     // MARK: Outlets and variables
-    
     @IBOutlet weak var messageView: UIView!
     @IBOutlet weak var messageLabel: UILabel!
-    
     // Variables to create video capture
     var captureSession = AVCaptureSession()
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
@@ -42,7 +41,6 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     var searchHistory = [Grocery?]()
     
     // MARK: View Overrides
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Cast viewController's inheritted tabBarController as CustomTabBarController
@@ -56,7 +54,6 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
         runScan()
     }
     
-    
     // Start scanner when returning to scan view
     override func viewWillAppear(_ animated: Bool) {
         runScan()
@@ -69,41 +66,30 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     }
     
     // MARK: Capture session functions
-    
     // Function to create capture session
     func createSession() {
         // Create discovery session to access rear camera for capturing video
-        let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInDualCamera, .builtInWideAngleCamera], mediaType: AVMediaType.video, position: .back)
-        
+        let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(
+            deviceTypes: [.builtInDualCamera, .builtInWideAngleCamera],
+            mediaType: AVMediaType.video,
+            position: .back)
         // Asign device from discovery session
         guard let captureDevice = deviceDiscoverySession.devices.first
         else { print("Failed to access camera"); return }
-        
         // Use Do-Catch to create input to add to capture session
         do {
             let input = try AVCaptureDeviceInput(device: captureDevice)
             // Add input to capture session
             captureSession.addInput(input)
-            
             // Initialize AVCaptureMetadataOutput object and set as output device to capture session
             let captureMetadataOutput = AVCaptureMetadataOutput()
             captureSession.addOutput(captureMetadataOutput)
-            
             // Set delegate as self and use default queue for callback
             captureMetadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
-            
             // Set types of metadata objects for output
             captureMetadataOutput.metadataObjectTypes = codeList
-            
-            // Initialize video preview layer and add as sublayer to viewPreview layer
-            videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-            videoPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
-            videoPreviewLayer?.frame = view.layer.bounds
-            view.layer.addSublayer(videoPreviewLayer!)
-            
-            // Show message label in front of video
-            view.bringSubviewToFront(messageView)
-            view.bringSubviewToFront(messageLabel)
+            // Initialize video preview
+            initializeScannerView(session: captureSession)
         }
         catch {
             // Print any error and end
@@ -111,6 +97,17 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
             print(error)
             return
         }
+    }
+    
+    func initializeScannerView(session: AVCaptureSession) {
+        // Initialize video preview layer and add as sublayer to viewPreview layer
+        videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+        videoPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        videoPreviewLayer?.frame = view.layer.bounds
+        view.layer.addSublayer(videoPreviewLayer!)
+        // Show message label in front of video
+        view.bringSubviewToFront(messageView)
+        view.bringSubviewToFront(messageLabel)
     }
     
     // Call optional protocol function metaDataOutput to process metadata input
@@ -198,8 +195,6 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
                     if currentGrocery?.upc != "0" {
                         searchHistory.append(currentGrocery)
                     }
-                    // DEBUG
-                    print(apiKey)
                     // Exit loop if successful
                     return
                 }
