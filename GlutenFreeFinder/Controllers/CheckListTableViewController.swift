@@ -12,7 +12,7 @@ class CheckListTableViewController: UITableViewController {
 
     // MARK: Outlets and Variables
     
-    var tabBar: CustomTabBarController!
+    var searchHistory: [Grocery] = HistoryViewController().searchHistory
     
     var checkedHistory = [Grocery?]()
     
@@ -26,10 +26,10 @@ class CheckListTableViewController: UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         // Set tabBarController to CustomTabBar for access to search history
-        tabBar = self.tabBarController as? CustomTabBarController
+        //tabBar = self.tabBarController as? CustomTabBarController
         // Use filter to add only groceries that have been checked to list
-        if !tabBar.searchHistory.isEmpty {
-            checkedHistory = tabBar.searchHistory.filter({ $0.checked == true})
+        if !searchHistory.isEmpty {
+            checkedHistory = searchHistory.filter({ $0.checked == true})
         // Update table view
         self.tableView.reloadData()
         }
@@ -69,7 +69,7 @@ class CheckListTableViewController: UITableViewController {
         if segue.identifier == "CheckListDetails",
            let indexPath = tableView.indexPathForSelectedRow,
            let destination = segue.destination as? GroceryDetailsViewController {
-            let selectedGrocery = tabBar.searchHistory[indexPath.row]
+            let selectedGrocery = searchHistory[indexPath.row]
             // Set title for new nav view
             destination.navigationItem.title = "Details"
             // Pass the selected object to the new view controller.

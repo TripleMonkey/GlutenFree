@@ -36,16 +36,15 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
         AVMetadataObject.ObjectType.pdf417,
         AVMetadataObject.ObjectType.upce
     ]
-    // Custom tab controller to maintain search history
-    var tabBar: CustomTabBarController!
-    var searchHistory = [Grocery?]()
+    // History View Controller
+    var historyVC = HistoryViewController.shared
+   // var searchHistory = [Grocery?]()
     
     // MARK: View Overrides
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Cast viewController's inheritted tabBarController as CustomTabBarController
-        tabBar = self.tabBarController as? CustomTabBarController
-        //searchHistory = tabBar.searchHistory
+        //searchHistory = HistoryViewController().searchHistory
+        print("Starting history count: \(historyVC.searchHistory.count)")
         // Set background color
         view.backgroundColor = UIColor(named: "backgroundYellowColor")
         // Call capture session for scanner
@@ -127,7 +126,7 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
                 if currentGrocery != nil {
                     self.performSegue(withIdentifier: "groceryDetails", sender: self)
                     // Add to history
-                    tabBar?.updateHistory(with: currentGrocery!)
+   //                 tabBar?.updateHistory(with: currentGrocery!)
                     // Clear currentGrocery
                     currentGrocery = nil
                     // Reset capture session
@@ -167,15 +166,15 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
         // variable to track if match found in existing history
         var matched = false
         
-        for i in 0..<searchHistory.count {
-            if searchHistory[i]?.upc == trimmedUPC {
+        for i in 0..<historyVC.searchHistory.count {
+            if historyVC.searchHistory[i].upc == trimmedUPC {
                 // Match found in history, use that grocery
-                currentGrocery = searchHistory[i]
+                currentGrocery = historyVC.searchHistory[i]
                 matched = true
             }
         }
         // If no match or history is empty call to api
-        if matched == false || searchHistory.isEmpty {
+        if matched == false || historyVC.searchHistory.isEmpty {
             // Session for async task
             let session = URLSession.shared
             // Get API Key from bundle
@@ -192,11 +191,12 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
                     // Create grocery from api data
                     currentGrocery = Grocery(apiData: data)
                     // Add groceery to search history
-                    if currentGrocery?.upc != "0" {
-                        searchHistory.append(currentGrocery)
-                    }
+                    guard currentGrocery?.upc != "0", let grocery = currentGrocery else { return }
+                        historyVC.searchHistory.append(grocery)
+                        print("Grocery added to history: Count \(historyVC.searchHistory.count)")
+                    
                     // Exit loop if successful
-                    return
+                   // return
                 }
                 catch {
                     print(error)

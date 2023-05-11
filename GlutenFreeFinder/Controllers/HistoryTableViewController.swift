@@ -12,7 +12,7 @@ class HistoryTableViewController: UITableViewController {
     
     // MARK: Outlets and Variables
     
-    var tabBar: CustomTabBarController!
+    var historyVC: HistoryViewController = HistoryViewController.shared
     
     var searchHistory = [Grocery?]()
     
@@ -25,8 +25,8 @@ class HistoryTableViewController: UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         // Set tabBarController to CustomTabBar for access to search history
-        tabBar = self.tabBarController as? CustomTabBarController
-        searchHistory = tabBar.searchHistory
+       // historyVC = self.tabBarController as? HistoryViewController
+        searchHistory = historyVC.searchHistory
         self.tableView.reloadData()
     }
     
@@ -81,7 +81,7 @@ class HistoryTableViewController: UITableViewController {
         if segue.identifier == "HistoryDetails",
            let indexPath = tableView.indexPathForSelectedRow,
            let destination = segue.destination as? GroceryDetailsViewController {
-            let selectedGrocery = tabBar.searchHistory[indexPath.row]
+            let selectedGrocery = historyVC.searchHistory[indexPath.row]
             // Set title for new nav view
             destination.navigationItem.title = "Details"
             // Pass the selected object to the new view controller.

@@ -19,6 +19,7 @@
 		9E1B54DE29F97D290066ECFC /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 9E1B54DD29F97D290066ECFC /* FirebaseAuth */; };
 		9E1B54E029F97D290066ECFC /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 9E1B54DF29F97D290066ECFC /* FirebaseDatabase */; };
 		9E1B54E229F9AD870066ECFC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9E1B54E129F9AD870066ECFC /* GoogleService-Info.plist */; };
+		9E79357D2A0693D500B43ED4 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E79357C2A0693D500B43ED4 /* HistoryViewController.swift */; };
 		9E7D58B725A784F2005418FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7D58B625A784F2005418FE /* AppDelegate.swift */; };
 		9E7D58B925A784F2005418FE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7D58B825A784F2005418FE /* SceneDelegate.swift */; };
 		9E7D58BB25A784F2005418FE /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7D58BA25A784F2005418FE /* ScannerViewController.swift */; };
@@ -42,6 +43,7 @@
 		9E1B54D329F973CA0066ECFC /* HistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
 		9E1B54E129F9AD870066ECFC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9E1B54E329F9BF140066ECFC /* GFFConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = GFFConfig.xcconfig; sourceTree = "<group>"; };
+		9E79357C2A0693D500B43ED4 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		9E7D58B325A784F2005418FE /* GlutenFreeFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GlutenFreeFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E7D58B625A784F2005418FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9E7D58B825A784F2005418FE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				9E1B54D129F973C90066ECFC /* CheckListTableViewController.swift */,
 				9E1B54D329F973CA0066ECFC /* HistoryTableViewController.swift */,
 				9E1B54D029F973C90066ECFC /* PopUpViewController.swift */,
+				9E79357C2A0693D500B43ED4 /* HistoryViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 			files = (
 				9E1B54D529F973CA0066ECFC /* CheckListTableViewController.swift in Sources */,
 				9E7D58BB25A784F2005418FE /* ScannerViewController.swift in Sources */,
+				9E79357D2A0693D500B43ED4 /* HistoryViewController.swift in Sources */,
 				9E1B54D629F973CA0066ECFC /* CustomTabBarController.swift in Sources */,
 				9ED33BF725B3B73800AEDF03 /* GroceryDetailsViewController.swift in Sources */,
 				9E1B54C929F9730F0066ECFC /* HistoryTableViewCell.swift in Sources */,
