@@ -38,7 +38,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="backgroundYellowColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HistoryTableViewCell" id="c5H-E1-4Kg">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="historyGroceryCell" id="c5H-E1-4Kg">
                                 <rect key="frame" x="0.0" y="50" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="c5H-E1-4Kg" id="YBG-1z-f0w">
@@ -53,6 +53,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Scan history" id="K46-4R-ocd"/>
+                    <connections>
+                        <segue destination="l8N-Mw-wwo" kind="show" identifier="groceryDetails" id="CZC-Bm-paB"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EVj-3y-UJ1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -203,7 +206,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g4f-TR-gD7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="747.82608695652175" y="2347.0982142857142"/>
+            <point key="canvasLocation" x="741" y="2367"/>
         </scene>
         <!--Check List-->
         <scene sceneID="YGs-37-Y8X">
@@ -214,7 +217,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="backgroundYellowColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="checkListCell" id="FKo-ds-Iwh">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="historyGroceryCell" id="FKo-ds-Iwh">
                                 <rect key="frame" x="0.0" y="50" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FKo-ds-Iwh" id="63A-W5-b7w">
@@ -229,10 +232,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Check List" id="JBh-1D-bSA"/>
+                    <connections>
+                        <segue destination="l8N-Mw-wwo" kind="show" identifier="groceryDetails" id="coh-Yf-XAH"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n10-k6-N6E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="748" y="1600"/>
+            <point key="canvasLocation" x="741" y="1600"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ead-Pk-L4r">
@@ -245,6 +251,14 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="UmB-xu-KHW">
                         <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" name="maroonTextColor"/>
+                            <color key="textShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" name="maroonTextColor"/>
+                            <color key="textShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8WK-rK-cCJ">
                         <autoresizingMask key="autoresizingMask"/>
@@ -267,6 +281,12 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gff-Pp-h8V">
                         <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" name="maroonTextColor"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" name="maroonTextColor"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="JVs-ol-nGO" kind="relationship" relationship="rootViewController" id="zm3-r3-49r"/>
@@ -342,6 +362,9 @@
             <point key="canvasLocation" x="-100.00000000000001" y="1599.7767857142856"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="CZC-Bm-paB"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="checkList" width="65.5" height="65"/>
         <image name="checkListSelected" width="65.5" height="65.5"/>

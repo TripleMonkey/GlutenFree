@@ -24,10 +24,10 @@ class GroceryDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Update UI with current grocery details
-        Task {
-            groceryImage.image = await currentGrocery.loadImage()
-        }
         if currentGrocery != nil {
+            Task {
+                groceryImage.image = await currentGrocery.loadImage()
+            }
             if currentGrocery.badges.contains("gluten_free") {
                 glutenIndicatorLabel.text = "Gluten-Free"
                 glutenIndicatorLabel.textColor = UIColor(named: "glutenFreeGreen")

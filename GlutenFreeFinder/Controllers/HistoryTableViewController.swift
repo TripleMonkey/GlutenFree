@@ -11,7 +11,7 @@ import UIKit
 class HistoryTableViewController: UITableViewController {
     
     // MARK: Outlets and Variables
-    
+    // Get shared instance of history controller
     var historyVC: HistoryViewController = HistoryViewController.shared
     
     var searchHistory = [Grocery?]()
@@ -24,8 +24,7 @@ class HistoryTableViewController: UITableViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        // Set tabBarController to CustomTabBar for access to search history
-       // historyVC = self.tabBarController as? HistoryViewController
+        //initialize search history
         searchHistory = historyVC.searchHistory
         self.tableView.reloadData()
     }
@@ -63,14 +62,15 @@ class HistoryTableViewController: UITableViewController {
         // Display grocery image
         Task {
             cell.imageView?.image = await grocery.loadImage()
+            // }
+            cell.imageView?.bounds = CGRect(x: 0, y: 0, width: cell.frame.height * 0.5, height: cell.frame.height * 0.5)
+            cell.imageView?.clipsToBounds = true
         }
-        cell.imageView?.bounds = CGRect(x: 0, y: 0, width: cell.frame.height * 0.5, height: cell.frame.height * 0.5)
-        cell.imageView?.clipsToBounds = true
         return cell
     }
     
     override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
-        performSegue(withIdentifier: "HistoryDetails", sender: self)
+        performSegue(withIdentifier: "groceryDetails", sender: self)
     }
     
     // MARK: - Navigation
@@ -78,7 +78,7 @@ class HistoryTableViewController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
-        if segue.identifier == "HistoryDetails",
+        if segue.identifier == "groceryDetails",
            let indexPath = tableView.indexPathForSelectedRow,
            let destination = segue.destination as? GroceryDetailsViewController {
             let selectedGrocery = historyVC.searchHistory[indexPath.row]
